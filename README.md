@@ -1,3 +1,10 @@
+### WHAT IS USC_GAME?
+USC_GAME is A low top-down view college simulator pixel game with a twist... 
+It's actually located at USC TC based on IRL buildings with character interaction & stats and more shit, all created by dit. 
+pls no sue usc! also hair plays a major role in this game
+
+**ALL PROGRESS CHECKS LOCATED BELOW**
+
 ### ROAD MAP FOR THE GAME IM GONNA DEVOTE MY LIFE TO 
 **BASE GAME SHIT**
 - [X] Base Display Mechanics (Tile sets + resolution and fps shit)
