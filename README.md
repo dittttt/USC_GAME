@@ -1,7 +1,7 @@
 ### ROAD MAP FOR THE GAME IM GONNA DEVOTE MY LIFE TO 
 **BASE GAME SHIT**
 - [X] Base Display Mechanics (Tile sets + resolution and fps shit)
-- [X] Base Game Mechanics (Key Inputs so far, **_needs proper directional movement_**)
+- [X] Base Game Mechanics (Key Inputs so far, **_WITH directional movement_**)
 - [ ] Settings page
 - [ ] Intro Sequence
 
