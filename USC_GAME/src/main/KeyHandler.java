@@ -10,7 +10,8 @@ public class KeyHandler implements KeyListener{
     @Override
     public void keyTyped(KeyEvent e) {
     }
-
+    
+//  WHEN KEY IS PRESSED
     @Override
     public void keyPressed(KeyEvent e) {
         
@@ -33,6 +34,7 @@ public class KeyHandler implements KeyListener{
         }
     }
 
+//    WHEN KEY IS NOT PRESSED
     @Override
     public void keyReleased(KeyEvent e) {
         

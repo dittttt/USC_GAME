@@ -24,17 +24,20 @@ public class Player extends Entity{
         setDefaultValues();
         getPlayerImage();
     }
+// SET DEFAULT VALUES OF PLAYER HERE
     public void setDefaultValues(){
-        x = 100;
-        y = 100;
+        x = 1;
+        y = 350;
         speed = 4;
-        direction = "down";
+        direction = "right";
         }
     
     public void getPlayerImage(){
         
         try {
-
+            
+            System.out.println("Image loading started");
+         // load sprite images....
             up1 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Up1.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Up2.png"));
             up3 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Up3.png"));
@@ -51,10 +54,6 @@ public class Player extends Entity{
             right2 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Right2.png"));
             right3 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Right3.png"));
             right4 = ImageIO.read(getClass().getResourceAsStream("/player/MC_Right4.png"));
-            
-            System.out.println("Image loading started");
-         // load sprite images....
-         // load sprite images....
             System.out.println("Image loading ended");
             
         }catch(IOException e){
@@ -101,7 +100,7 @@ public class Player extends Entity{
     		}
 			else if(keyH.downPressed == true && keyH.rightPressed == true) {
     			direction = "down";
-    			int normalize = (int) Math.sqrt((speed*speed)+(speed*speed));
+//    			int normalize = (int) Math.sqrt((speed*speed)+(speed*speed));
     			y += (speed/1.4);
     			x += (speed/1.4);
     		}
@@ -122,7 +121,7 @@ public class Player extends Entity{
     			x += speed;
     		}
     
-    		
+
     		spriteCounter++;
     		if(spriteCounter > imageCycler) {
     			if(spriteNum == 1) {
