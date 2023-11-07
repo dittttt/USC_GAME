@@ -81,7 +81,7 @@ public class TileManager {
 		int worldCol = 0;
 		int worldRow = 0;
 		
-		while(worldCol < gp.maxScreenCol && worldRow < gp.maxScreenRow) {
+		while(worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
 			
 			int tileNum = mapTileNum[worldCol][worldRow];
 			
@@ -93,7 +93,7 @@ public class TileManager {
 			g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
 			worldCol++;
 			
-			if(worldCol == gp.maxScreenCol) {
+			if(worldCol == gp.maxWorldCol) {
 				worldCol = 0;
 				worldRow++;
 			}

@@ -17,14 +17,14 @@ public class GamePanel extends JPanel implements Runnable{
     final int scale = 5;
 
     public final int tileSize = originalTileSize * scale; // 80x80 tile 
-    public final int maxScreenCol = 24;
-    public final int maxScreenRow = 13;
+    public final int maxScreenCol = 24; // original = 24
+    public final int maxScreenRow = 13; // original = 13
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
 
     // WORLD SETTINGS
-    public final int maxWorldCol = 24;
-    public final int maxWorldRow = 13;
+    public final int maxWorldCol = 48;
+    public final int maxWorldRow = 20;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
     // FPS
@@ -49,13 +49,13 @@ public class GamePanel extends JPanel implements Runnable{
     }
     
 //    PLAYER LOCATION
-//    public int getPlayerX() {
-//        return player.x;
-//    }
-//
-//    public int getPlayerY() {
-//        return player.y;
-//    }
+    public int getPlayerX() {
+        return player.worldX;
+    }
+
+    public int getPlayerY() {
+        return player.worldY;
+    }
 
     
 // TIME SHIT TO SET FPS
@@ -83,7 +83,7 @@ public class GamePanel extends JPanel implements Runnable{
             }
             if(timer >= 1000000000) {
                 System.out.println("FPS: " + drawCount);
-//                System.out.println("Current Character Location: " + getPlayerX() + "x" + getPlayerY());
+                System.out.println("Current Character Location: " + getPlayerX() + "x" + getPlayerY());
                 drawCount = 0;
                 timer = 0;
             }
