@@ -16,8 +16,8 @@ pls no sue usc! also hair plays a major role in this game, you'll see... if you 
 - [X] Storing Tiles in a txt file
 - [X] Display Character Location
 - [ ] Tile Mapping outside of screen
-- [ ] Camera Implementation
-- [ ] Centering Camera to Character
+- [X] Camera Implementation
+- [X] Centering Camera to Character
 - [ ] Adding Map Collision
 - [ ] Object Placement
 - [ ] Object Interaction
