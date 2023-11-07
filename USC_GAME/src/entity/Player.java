@@ -1,6 +1,5 @@
 package entity;
 
-// import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -9,25 +8,29 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
-import java.lang.Math;
 
 public class Player extends Entity{
     
     GamePanel gp;
     KeyHandler keyH;
     
-
+    public final int screenX;
+    public final int screenY;
+    
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
 
+        screenX = gp.screenWidth/2 - (gp.tileSize/2);
+        screenY = gp.screenHeight/2 - (gp.tileSize/2);
+        
         setDefaultValues();
         getPlayerImage();
     }
 // SET DEFAULT VALUES OF PLAYER HERE
     public void setDefaultValues(){
-        x = 1;
-        y = 350;
+        worldX = gp.tileSize * 11;
+        worldY = gp.tileSize * 6;
         speed = 4;
         direction = "right";
         }
@@ -75,7 +78,7 @@ public class Player extends Entity{
     			speed = 4;
     			imageCycler = 10;
     	} else {
-    			speed = 6;
+    			speed = 10;
     			imageCycler = 7;
     	}
     	
@@ -85,40 +88,39 @@ public class Player extends Entity{
 			if(keyH.upPressed == true && keyH.rightPressed == true) {
     			direction = "up";
 // NORMAL = y -= speed
-    			y -= (speed/1.4);
-    			x += (speed/1.4);
+    			worldY -= (speed/1.4);
+    			worldX += (speed/1.4);
     		}
 			else if(keyH.upPressed == true && keyH.leftPressed == true) {
     			direction = "up";
-    			y -= (speed/1.4);
-    			x -= (speed/1.4);
+    			worldY -= (speed/1.4);
+    			worldX -= (speed/1.4);
     		}
 			else if(keyH.downPressed == true && keyH.leftPressed == true) {
     			direction = "down";
-    			y += (speed/1.4);
-    			x -= (speed/1.4);
+    			worldY += (speed/1.4);
+    			worldX -= (speed/1.4);
     		}
 			else if(keyH.downPressed == true && keyH.rightPressed == true) {
     			direction = "down";
-//    			int normalize = (int) Math.sqrt((speed*speed)+(speed*speed));
-    			y += (speed/1.4);
-    			x += (speed/1.4);
+    			worldY += (speed/1.4);
+    			worldX += (speed/1.4);
     		}
 			else if(keyH.upPressed == true){
     			direction = "up";
-    			y -= speed;
+    			worldY -= speed;
     		}
     		else if(keyH.downPressed == true){
     			direction = "down";
-    			y += speed;
+    			worldY += speed;
     		}
     		else if(keyH.leftPressed == true) {
     			direction = "left";
-    			x -= speed;
+    			worldX -= speed;
     		}
     		else if(keyH.rightPressed == true) {
     			direction = "right";
-    			x += speed;
+    			worldX += speed;
     		}
     
 
@@ -217,6 +219,6 @@ public class Player extends Entity{
         	
         	
                     }
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize*2, null);
+        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize*2, null);
     }
 }
