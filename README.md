@@ -15,10 +15,10 @@ pls no sue usc! also hair plays a major role in this game, you'll see... if you 
 - [X] Tiling
 - [X] Storing Tiles in a txt file
 - [X] Display Character Location
-- [ ] Tile Mapping outside of screen
+- [X] Tile Mapping outside of screen (not graphically mapped, but can now be implemented easily)
 - [X] Camera Implementation
 - [X] Centering Camera to Character
-- [ ] Adding Map Collision
+- [X] Adding Map Collision
 - [ ] Object Placement
 - [ ] Object Interaction
 - [ ] Settings page
