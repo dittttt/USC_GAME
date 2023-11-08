@@ -83,17 +83,16 @@ public class Player extends Entity{
     	
     	if(keyH.shiftPressed == false) {
     			speed = 4;
-    			imageCycler = 10;
+    			imageCycler = 9;
     	} else {
     			speed = 7	;
-    			imageCycler = 7;
+    			imageCycler = 5;
     	}
-    	
     	int tempWorldX = worldX;
         int tempWorldY = worldY;
 
         if (keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed) {
-
+        	
             if (keyH.upPressed) {
                 direction = "up";
                 worldY -= speed;
@@ -123,33 +122,32 @@ public class Player extends Entity{
             // CHECK TILE COLLISION
             collisionOn = false;
             gp.cChecker.checkTile(this);
-
             // IF COLLISION IS TRUE; PLAYER CANNOT MOVE
             if (collisionOn) {
                 worldX = tempWorldX;
                 worldY = tempWorldY;
-            }
+        	}
+            spriteCounter++;
+        	if(spriteCounter > imageCycler) {
+        		switch(spriteNum) {
+        		case 1:
+        			spriteNum = 2;
+        			break;
+        		case 2:
+        			spriteNum = 3;
+        			break;
+        		case 3:
+        			spriteNum = 4;
+        			break;
+        			
+        		case 4:
+        			spriteNum = 1;
+        			break;
+        		}
+        		spriteCounter = 0;
+        	}
         }
 			
-		spriteCounter++;
-		if(spriteCounter > imageCycler) {
-			if(spriteNum == 1) {
-				spriteNum = 2;
-			}
-			else if(spriteNum == 2) {
-				spriteNum = 3;
-			}
-			else if(spriteNum == 2) {
-				spriteNum = 3;
-			}
-			else if(spriteNum == 3) {
-				spriteNum = 4;
-			}
-			else if(spriteNum == 4) {
-				spriteNum = 1;
-			}
-			spriteCounter = 0;
-		}
 	}
     	
     public void draw(Graphics2D g2){
